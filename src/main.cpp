@@ -4,6 +4,7 @@
 #include <boost/program_options.hpp>
 // Імпорти файлів прогрми
 #include "../include/convert.hpp"
+#include "../include/binary_arithmetic.hpp"
 #include "../include/output.hpp"
 #include "../include/data.hpp"
 #include "../include/colors.hpp"
@@ -23,8 +24,11 @@ int main(int argc, char* argv[]) {
 
     // Змінні для зберігання чисел і різних форматах
     int dec_number;
-    vector<int> bin_array;
+    vector<int> first_bin_array;
+    vector<int> second_bin_array;
     vector<int> hex_array;
+    vector<int> result_bin_array;
+
     // Кольорова палітра для функцій
     string color_pack[] = {CO::YELLOW, CO::GREEN, CO::RED, CO::STAND, CO::BLUE};
 
@@ -33,9 +37,11 @@ int main(int argc, char* argv[]) {
         ("help", "Вивід всіх існуючих опцій")
         ("version", "Вивід інформації про програму")
         ("convert", "Конвертування числа")
+        ("arithmetic", po::value<char>(), "Двійкова арифметика")
         ;
     arg_desc.add_options()
-        ("bin", po::value<string>(), "Двійковий формат")
+        ("fbin", po::value<string>(), "Двійковий формат")
+        ("sbin", po::value<string>(), "Ще одний двійковий формат")
         ("dec", po::value<int>(&dec_number), "Десятковий формат")
         ("hex", po::value<string>(), "Шістнадцятковий формат")
         ;
@@ -78,7 +84,7 @@ int main(int argc, char* argv[]) {
 
         if(var_map.count("convert")) {
     
-            if(var_map.count("bin") || var_map.count("dec") || var_map.count("hex")) {
+            if(var_map.count("fbin") || var_map.count("dec") || var_map.count("hex")) {
 
                 if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
                     // З десяткового формат в...
@@ -94,27 +100,27 @@ int main(int argc, char* argv[]) {
                         };
 
                         if(var_map.count("bm")) {
-                            BinaryFromDecimal(bin_array, dec_number);
-                            OutputBinaryArray(bin_array, color_pack);
+                            BinaryFromDecimal(first_bin_array, dec_number);
+                            OutputBinaryArray(first_bin_array, color_pack);
                         };
                 
-                    } else if(var_map.count("bin")) {
+                    } else if(var_map.count("fbin")) {
                         // З двійкового формату в...
-                        ArrayFromString(bin_array, var_map["bin"].as<string>());
+                        ArrayFromString(first_bin_array, var_map["fbin"].as<string>());
 
                         if(var_map.count("dm")) {
-                            DecimalFromBinary(dec_number, bin_array);
+                            DecimalFromBinary(dec_number, first_bin_array);
                             OutputDecimalNumber(dec_number, color_pack);
                         };
 
                         if(var_map.count("hm")) {
-                            DecimalFromBinary(dec_number, bin_array);
+                            DecimalFromBinary(dec_number, first_bin_array);
                             HexadecimalFromDecimal(hex_array, dec_number);
                             OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
                         };
 
                         if(var_map.count("bm")) {
-                            OutputBinaryArray(bin_array, color_pack);
+                            OutputBinaryArray(first_bin_array, color_pack);
                         };
 
                     } else if(var_map.count("hex")) {
@@ -132,8 +138,8 @@ int main(int argc, char* argv[]) {
 
                         if(var_map.count("bm")) {
                             DecimalFromHexadecimal(dec_number, hex_array);
-                            BinaryFromDecimal(bin_array, dec_number);
-                            OutputBinaryArray(bin_array, color_pack);
+                            BinaryFromDecimal(first_bin_array, dec_number);
+                            OutputBinaryArray(first_bin_array, color_pack);
                         };
                     };
 
@@ -143,6 +149,25 @@ int main(int argc, char* argv[]) {
 
             } else {
                 throw string("Відсутній формат числа для конвертування!");
+            };
+        } else if(var_map.count("arithmetic")) {
+            ArrayFromString(first_bin_array, var_map["fbin"].as<string>());
+            ArrayFromString(second_bin_array, var_map["sbin"].as<string>());
+
+            if(var_map["arithmetic"].as<char>() == '+') {
+                AdditionBinary(first_bin_array, second_bin_array, result_bin_array);
+                OutputBinaryArray(result_bin_array, color_pack);
+            }; 
+            
+            if(var_map["arithmetic"].as<char>() == '-') {
+
+            };
+            if(var_map["arithmetic"].as<char>() == '*') {
+
+            };
+
+            if(var_map["arithmetic"].as<char>() == '/') {
+
             };
         };
 
