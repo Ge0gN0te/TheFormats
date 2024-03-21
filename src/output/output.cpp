@@ -18,10 +18,9 @@ void OutputBinaryArray(vector<int>& bin_array, string colors[]) {
     cout << colors[2] << " (" << s_counter << ")" << colors[3] << endl;
 };
 // Виведення шістнадцяткового формату
-void OutputHexadecimalArray(vector<int>& hex_array, string colors[]) {
+void OutputHexadecimalArray(vector<int>& hex_array, const char hex_map[], string colors[]) {
     int counter = 0;
     int s_counter = 0;
-    const char hex_map[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
     cout << colors[0] << "➤➤➤➤ Шістнадцятковий формат: " << colors[1];
     for(int i = hex_array.size() - 1; i >= 0; i--) {

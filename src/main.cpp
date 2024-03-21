@@ -34,19 +34,16 @@ int main(int argc, char* argv[]) {
         ("version", "Вивід інформації про програму")
         ("convert", "Конвертування числа")
         ;
-    
     arg_desc.add_options()
         ("bin", po::value<string>(), "Двійковий формат")
         ("dec", po::value<int>(&dec_number), "Десятковий формат")
         ("hex", po::value<string>(), "Шістнадцятковий формат")
         ;
-
     mark_desc.add_options()
         ("bm", "Мітка двійкового формату")
         ("dm", "Мітка десяткового формату")
         ("hm", "Мітка шістнадцяткового формату")
         ;
-
     // Групування всіх описів в один 
     all_desc.add(func_desc).add(arg_desc).add(mark_desc);
 
@@ -93,7 +90,7 @@ int main(int argc, char* argv[]) {
 
                         if(var_map.count("hm")) {
                             HexadecimalFromDecimal(hex_array, dec_number);
-                            OutputHexadecimalArray(hex_array, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
                         };
 
                         if(var_map.count("bm")) {
@@ -113,7 +110,7 @@ int main(int argc, char* argv[]) {
                         if(var_map.count("hm")) {
                             DecimalFromBinary(dec_number, bin_array);
                             HexadecimalFromDecimal(hex_array, dec_number);
-                            OutputHexadecimalArray(hex_array, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
                         };
 
                         if(var_map.count("bm")) {
@@ -130,7 +127,7 @@ int main(int argc, char* argv[]) {
                         };
 
                         if(var_map.count("hm")) {
-                        OutputHexadecimalArray(hex_array, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
                         };
 
                         if(var_map.count("bm")) {
