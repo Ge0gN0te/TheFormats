@@ -6,7 +6,7 @@ find_package(Boost REQUIRED COMPONENTS program_options)
 
 # Додаємо виконуваний файл
 add_executable(progmi src/main.cpp)
-target_sources(progmi PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp)
+target_sources(progmi PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
 
 target_link_libraries(progmi PRIVATE Boost::program_options)
 
