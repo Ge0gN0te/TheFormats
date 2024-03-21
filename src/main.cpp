@@ -1,7 +1,8 @@
+// Імпорти сторроніх бібліотек
 #include <vector>
 #include <iostream>
 #include <boost/program_options.hpp>
-
+// Імпорти файлів прогрми
 #include "../include/convert.hpp"
 #include "../include/output.hpp"
 #include "../include/data.hpp"
@@ -12,17 +13,22 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
+    // Описи всіх опцій
     po::options_description all_desc ("Всі існуючі опції програми");
     po::options_description func_desc ("Функції");
     po::options_description arg_desc ("Аргументи");
     po::options_description mark_desc ("Мітки");
+    // Змінна для парсингу введених користувачем значень
     po::variables_map var_map;
 
+    // Змінні для зберігання чисел і різних форматах
     int dec_number;
     vector<int> bin_array;
     vector<int> hex_array;
+    // Кольорова палітра для функцій
     string color_pack[] = {CO::YELLOW, CO::GREEN, CO::RED, CO::STAND, CO::BLUE};
 
+    // Додавання опцій та описів до них
     func_desc.add_options()
         ("help", "Вивід всіх існуючих опцій")
         ("version", "Вивід інформації про програму")
@@ -41,10 +47,14 @@ int main(int argc, char* argv[]) {
         ("hm", "Мітка шістнадцяткового формату")
         ;
 
+    // Групування всіх описів в один 
     all_desc.add(func_desc).add(arg_desc).add(mark_desc);
 
+    // Блок парсингу
     try {
+        // Парсинг командного рядка
         po::store(po::parse_command_line(argc, argv, all_desc), var_map);
+        // Повідомлення про успішний парсинг
         po::notify(var_map);
 
     } catch(const po::unknown_option& e) {
@@ -58,22 +68,23 @@ int main(int argc, char* argv[]) {
         return 0;
     };
 
+    // Блок для перевірки введених опцій
     try {
         if(var_map.count("help")) {
             cout << all_desc << endl;
-            OutputHelpMessage(color_pack);
+            OutputHelpTxt(color_pack);
         };
 
         if(var_map.count("version")) {
-            OutputVersionMessage(color_pack);
+            OutputVersionTxt(color_pack);
         };
 
         if(var_map.count("convert")) {
-
+    
             if(var_map.count("bin") || var_map.count("dec") || var_map.count("hex")) {
 
                 if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
-                
+                    // З десяткового формат в...
                     if(var_map.count("dec")) {
 
                         if(var_map.count("dm")) {
@@ -91,6 +102,7 @@ int main(int argc, char* argv[]) {
                         };
                 
                     } else if(var_map.count("bin")) {
+                        // З двійкового формату в...
                         ArrayFromString(bin_array, var_map["bin"].as<string>());
 
                         if(var_map.count("dm")) {
@@ -109,6 +121,7 @@ int main(int argc, char* argv[]) {
                         };
 
                     } else if(var_map.count("hex")) {
+                        // З шістнадцяткового формату в...
                         TransformCharArray(hex_array, var_map["hex"].as<string>());
 
                         if(var_map.count("dm")) {

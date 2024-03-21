@@ -1,6 +1,6 @@
 #include "../../include/output.hpp"
 
-
+// Виведення двійкового формату
 void OutputBinaryArray(vector<int>& bin_array, string colors[]) {
     int counter = 0;
     int s_counter = 0;
@@ -17,7 +17,7 @@ void OutputBinaryArray(vector<int>& bin_array, string colors[]) {
     };
     cout << colors[2] << " (" << s_counter << ")" << colors[3] << endl;
 };
-
+// Виведення шістнадцяткового формату
 void OutputHexadecimalArray(vector<int>& hex_array, string colors[]) {
     int counter = 0;
     int s_counter = 0;
@@ -39,38 +39,53 @@ void OutputHexadecimalArray(vector<int>& hex_array, string colors[]) {
     };
     cout << colors[2] << " (" << s_counter << ")" << colors[3] << endl;
 };
-
+// Виведення десяткового формату
 void OutputDecimalNumber(int dec_number, string colors[]) {
     cout << colors[0] << "➤➤➤➤ Десятковий формат: " << colors[1];
     cout << dec_number << colors[2] << endl;
 };
 
-void OutputHelpMessage(string colors[]) {
-    cout << colors[2] << "◆ ДЛЯ УСПІШНОЇ КОНВЕРТАЦІЇ ЧИСЛА ПОТРІБНО ВВЕСТИ ПОТРІБНІ ОПЦІЇ;\n"
-    << "◆ А САМЕ ЗАПУСК ПРОГРАМИ(./progmi), ФУНКЦІЮ КОНВЕРТАЦІЇ(--convert), ФОРМАТ ТА ЙОГО\n"
-    << "┗━━━ ЧИСЛО(--bin 1010) ТА МІТКУ ФОРМАТУ(--dm);\n" 
-    << "◆ ФОРМАТ ТА ЙОГО ЧИСЛО - ЦЕ ВХІДНІ ДАНІ, ФОРМАТ ПОТРІБЕН ДЛЯ ТОЧНОГО ПЕРДСТАВЛЕННЯ\n"
-    << "┗━━━ ЧИЛА, ЯКЕ ЙДЕ ПІCЛЯ, ВОНО І БУДЕ КОНВЕРТУВАТИСЬ;\n"
-    << "◆ МІТКА - ВИКОНУЄ ФУНКЦІЮ ВКАЗІВНИКА НА ФОРМАТ, В ЯКИЙ МИ ХОЧЕМО ПЕРЕТВОРИТИ ПОПЕРЕДНЄ\n"
-    << "┗━━━ ЧИСЛО;\n" 
-    << "◆ ОДНОЧАСНО МОЖНА ВИКОРИСТОВУВАТИ ТРИ МІТКИ;\n"
-    << "◆ ДЛЯ ПРАВИЛЬНОГО ВВЕДЕННЯ ДЕСЯТКОВОГО ЧИСЛА, ПОТРІБНО ВИКОРИСТОВУВАТИ ТІЛЬКИ ЧИСЛА;\n"
-    << "◆ ДЛЯ ПРАВИЛЬНОГО ВВЕДЕННЯ ДВІЙКОВОГО ЧИСЛА, ПОТРІБНО ВИКОРИСТОВУВАТИ ТІЛЬКИ ДВА\n"
-    << "┗━━━ ЧИСЛА, 0 ТА 1;\n"
-    << "◆ ДЛЯ ПРАВИЛЬНОГО ВВЕДЕННЯ ШІСТНАДЦЯТКОВОГО ЧИСЛА, ПОТРІБНО ВИКОРИСТОВУВАТИ ТІЛЬКИ\n"
-    << "┗━━━ ЧИСЛА 1-9 ТА БУКВИ A-F;\n"
-    << colors[3] << "Приклад правильного використання функції --convert:\n"
-    << colors[1] << "◆ ./progmi --convert --bin 1010 --dm = конвертація двійкового числа 1010\n"
-    << "┗━━━ у десятковий формат;\n"
-    << "◆ ./progmi --convert --hex AA --dm --bm = конвертація шістнадцятковго числа AA у двійковий\n"
-    << "┗━━━ та десятковий формати;\n"
-    << "◆ ./progmi --convert --dec 32 --dm --bm --hm = конвертація десяткового числа 32 у двійковий\n"
-    << "┗━━━ та шістнадцятковий формати, та при цьому вивести десятковий формат теж;" << colors[3] << endl;
-};
+// Виведення застережень для команди help
+void OutputHelpTxt(string colors[]) {
+    string line;
+    int counter = 0;
+    ifstream file("../components/help_info.txt"); // Відкриття файлу для зчитування
 
-void OutputVersionMessage(string colors[]) {
-    cout << colors[1] << "ПРОГРАМА: " << "CONVERTER " << "ВЕРСІЇ: " << "0.1\n" << colors[4]
-    << "◆ Програма була підготовлена для Лабораторних робіт N3.4-3.7 Комп'ютерної схемотехніки;\n"
-    << "◆ Програма для виконання функцій конвертування чисел трьох форматів числення;\n"
-    << "◆ Автор програми: Диченко Давид Олександрович;" << colors[3] << endl;
+    if (!file.is_open()) { // Перевірка, чи вдалося відкрити файл
+        throw string("Не вдалося відкрити файл!");
+    };
+
+    while (getline(file, line)) { // Зчитування рядків з файлу
+        if(counter > 12) {
+            cout << colors[1] << line << endl;
+        } else {
+            cout << colors[2] << line << endl; // Виведення рядка на екран
+        };
+        counter++;
+    };
+    cout << colors[3];
+
+    file.close(); // Закриття файлу
+};
+// Виведення інформації про програму
+void OutputVersionTxt(string colors[]) {
+    string line;
+    int counter = 0;
+    ifstream file("../components/version_info.txt"); // Відкриття файлу для зчитування
+
+    if (!file.is_open()) { // Перевірка, чи вдалося відкрити файл
+        throw string("Не вдалося відкрити файл!");
+    };
+
+    while (getline(file, line)) { // Зчитування рядків з файлу
+        if(counter > 0) {
+            cout << colors[4] << line << endl;
+        } else {
+            cout << colors[1] << line << endl; // Виведення рядка на екран
+        };
+        counter++;
+    };
+    cout << colors[3];
+
+    file.close(); // Закриття файлу
 }

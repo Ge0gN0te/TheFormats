@@ -1,6 +1,6 @@
 #include "../../include/data.hpp"
 
-
+// Обернений переклад шістнадцяткового формату
 void TransformCharArray(vector<int>& int_array, string value) {
     for(int i = value.size() - 1; i >= 0; i--) {
         if(value[i] == 'A') {
@@ -20,7 +20,7 @@ void TransformCharArray(vector<int>& int_array, string value) {
         };
     };
 };
-
+// Розділення та перетворення речення у масив
 void ArrayFromString(vector<int>& array, string value) {
     for(int i = value.size() - 1; i >= 0 ; i--) {
         array.push_back((int)value[i] - 48);
