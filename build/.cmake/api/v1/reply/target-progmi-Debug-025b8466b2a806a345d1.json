@@ -69,7 +69,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -110,7 +111,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -138,6 +140,12 @@
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "src/data/data.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/binary_arithmetic/binary_arithmetic.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

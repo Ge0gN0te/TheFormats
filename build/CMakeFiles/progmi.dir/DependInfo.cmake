@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/binary_arithmetic/binary_arithmetic.cpp" "CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o" "gcc" "CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o.d"
   "/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/convert/convert.cpp" "CMakeFiles/progmi.dir/src/convert/convert.cpp.o" "gcc" "CMakeFiles/progmi.dir/src/convert/convert.cpp.o.d"
   "/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/data/data.cpp" "CMakeFiles/progmi.dir/src/data/data.cpp.o" "gcc" "CMakeFiles/progmi.dir/src/data/data.cpp.o.d"
   "/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/main.cpp" "CMakeFiles/progmi.dir/src/main.cpp.o" "gcc" "CMakeFiles/progmi.dir/src/main.cpp.o.d"

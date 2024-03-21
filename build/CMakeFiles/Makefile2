@@ -81,12 +81,12 @@ clean: CMakeFiles/progmi.dir/clean
 CMakeFiles/progmi.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target progmi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target progmi"
 .PHONY : CMakeFiles/progmi.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/progmi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/progmi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/build/CMakeFiles 0
 .PHONY : CMakeFiles/progmi.dir/rule

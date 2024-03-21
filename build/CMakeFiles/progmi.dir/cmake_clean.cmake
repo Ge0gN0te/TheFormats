@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o"
+  "CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o.d"
   "CMakeFiles/progmi.dir/src/convert/convert.cpp.o"
   "CMakeFiles/progmi.dir/src/convert/convert.cpp.o.d"
   "CMakeFiles/progmi.dir/src/data/data.cpp.o"

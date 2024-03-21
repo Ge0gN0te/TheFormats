@@ -590,6 +590,7 @@ CMakeFiles/progmi.dir/src/main.cpp.o: \
  /usr/include/boost/program_options/variables_map.hpp \
  /usr/include/boost/program_options/version.hpp \
  /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/../include/convert.hpp \
+ /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/../include/binary_arithmetic.hpp \
  /home/david/Documents/College/ComputerCircuity/LaboratoryWorkN3.4-3.6/src/../include/output.hpp \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \

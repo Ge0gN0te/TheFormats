@@ -129,6 +129,30 @@ progmi/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/build
 .PHONY : progmi/fast
 
+src/binary_arithmetic/binary_arithmetic.o: src/binary_arithmetic/binary_arithmetic.cpp.o
+.PHONY : src/binary_arithmetic/binary_arithmetic.o
+
+# target to build an object file
+src/binary_arithmetic/binary_arithmetic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o
+.PHONY : src/binary_arithmetic/binary_arithmetic.cpp.o
+
+src/binary_arithmetic/binary_arithmetic.i: src/binary_arithmetic/binary_arithmetic.cpp.i
+.PHONY : src/binary_arithmetic/binary_arithmetic.i
+
+# target to preprocess a source file
+src/binary_arithmetic/binary_arithmetic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.i
+.PHONY : src/binary_arithmetic/binary_arithmetic.cpp.i
+
+src/binary_arithmetic/binary_arithmetic.s: src/binary_arithmetic/binary_arithmetic.cpp.s
+.PHONY : src/binary_arithmetic/binary_arithmetic.s
+
+# target to generate assembly for a file
+src/binary_arithmetic/binary_arithmetic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.s
+.PHONY : src/binary_arithmetic/binary_arithmetic.cpp.s
+
 src/convert/convert.o: src/convert/convert.cpp.o
 .PHONY : src/convert/convert.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... progmi"
+	@echo "... src/binary_arithmetic/binary_arithmetic.o"
+	@echo "... src/binary_arithmetic/binary_arithmetic.i"
+	@echo "... src/binary_arithmetic/binary_arithmetic.s"
 	@echo "... src/convert/convert.o"
 	@echo "... src/convert/convert.i"
 	@echo "... src/convert/convert.s"
