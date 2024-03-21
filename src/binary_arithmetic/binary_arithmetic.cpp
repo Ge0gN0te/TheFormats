@@ -11,6 +11,12 @@ void HowArrayMaxSize(vector<int> first_array, vector<int> second_array, int& max
     };
 };
 
+void InArray(vector<int> in_array, vector<int> with_array) {
+	for(int i = 0; i <= with_array.size(); i++) {
+		in_array.push_back(with_array[i]);
+	};
+};
+
 // Знаходження суми двох бінарних масивів
 void AdditionBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& result_bin) {
 	int sum = 0;
@@ -37,7 +43,6 @@ void AdditionBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& 
 		result_bin.push_back(carry);
 	};
 };
-
 
 void SubtractionBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& result_bin) {
 	int diff = 0;
@@ -71,5 +76,22 @@ void SubtractionBinary(vector<int> first_bin, vector<int> second_bin, vector<int
 		for(int i = 0; result_bin[i] == 0; i++) {
         	result_bin.erase(result_bin.begin(), result_bin.begin());
 		};
+	};
+};
+
+void MultiplycationBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& result_bin) {
+	for(int i = 0; i <= first_bin.size() - 1; i++) {
+    	if(second_bin[i] == 1) {
+            // Заповнення тимчасового масиву, першим двійковим числом:
+            // temp_array == first_structure.bin_array
+
+        	for(int j = 0; j < first_bin.size() - 1 - i; j++) {
+				cout << "j: " << j << " i: " << i << endl;
+                // Додавання масиву самого на себе
+            	AdditionBinary(result_bin, result_bin, result_bin);
+        	};
+            // Додавання тимчасового масиву до добутку
+        	AdditionBinary(result_bin, result_bin, result_bin);
+    	};
 	};
 };

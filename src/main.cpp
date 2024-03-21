@@ -163,8 +163,9 @@ int main(int argc, char* argv[]) {
                 SubtractionBinary(first_bin_array, second_bin_array, result_bin_array);
                 OutputBinaryArray(result_bin_array, color_pack);
             };
-            if(var_map["arithmetic"].as<char>() == '*') {
-
+            if(var_map["arithmetic"].as<char>() == 'x') {
+                MultiplycationBinary(first_bin_array, second_bin_array, result_bin_array);
+                OutputBinaryArray(result_bin_array, color_pack);
             };
 
             if(var_map["arithmetic"].as<char>() == '/') {
