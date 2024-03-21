@@ -38,3 +38,38 @@ void AdditionBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& 
 	};
 };
 
+
+void SubtractionBinary(vector<int> first_bin, vector<int> second_bin, vector<int>& result_bin) {
+	int diff = 0;
+    int borrow = 0;
+	int max_size;
+
+	HowArrayMaxSize(first_bin, second_bin, max_size);
+
+    // Цикл для перебору двох бінарних масивів
+	for(int i = 0; i <= max_size - 1; i++) {
+		if(first_bin[i] > 1) {
+			diff = second_bin[i] - borrow;
+		} else if(second_bin[i] > 1) {
+			diff = first_bin[i] - borrow;
+		} else {
+			diff = first_bin[i] - second_bin[i] - borrow;
+		};
+
+        if(diff < 0) {
+            diff += 2;
+            borrow = 1;
+		} else {
+            borrow = 0;
+		};
+
+        result_bin.push_back(diff);
+	};
+
+    // Видалення зайвих нулів з початку результату
+    if(result_bin.size() > 1) {
+		for(int i = 0; result_bin[i] == 0; i++) {
+        	result_bin.erase(result_bin.begin(), result_bin.begin());
+		};
+	};
+};

@@ -160,7 +160,8 @@ int main(int argc, char* argv[]) {
             }; 
             
             if(var_map["arithmetic"].as<char>() == '-') {
-
+                SubtractionBinary(first_bin_array, second_bin_array, result_bin_array);
+                OutputBinaryArray(result_bin_array, color_pack);
             };
             if(var_map["arithmetic"].as<char>() == '*') {
 
