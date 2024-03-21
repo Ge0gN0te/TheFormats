@@ -70,9 +70,9 @@ int main(int argc, char* argv[]) {
         if(var_map.count("help")) {
             cout << all_desc << endl;
             OutputHelpTxt(color_pack);
-        };
+        }
 
-        if(var_map.count("version")) {
+        else if(var_map.count("version")) {
             OutputVersionTxt(color_pack);
         };
 
