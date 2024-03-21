@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(Laboratory_workN3.4-3.6, VERSION 0.1)
+project(Laboratory_workN3.4-3.6, VERSION 0.2)
 
 # Знайдемо бібліотеку Boost
 find_package(Boost REQUIRED COMPONENTS program_options)
