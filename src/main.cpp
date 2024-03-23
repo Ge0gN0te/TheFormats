@@ -75,7 +75,7 @@ int main(int argc, char* argv[]) {
     try {
         if(var_map.count("help")) {
             cout << all_desc << endl;
-            OutputHelpTxt(color_pack);
+            //OutputHelpTxt(color_pack);
         }
 
         else if(var_map.count("version")) {
@@ -84,7 +84,7 @@ int main(int argc, char* argv[]) {
 
         if(var_map.count("convert")) {
     
-            if(var_map.count("fbin") || var_map.count("dec") || var_map.count("hex")) {
+            if(var_map.count("fbin") || var_map.count("sbin")|| var_map.count("dec") || var_map.count("hex")) {
 
                 if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
                     // З десяткового формат в...
@@ -104,9 +104,13 @@ int main(int argc, char* argv[]) {
                             OutputBinaryArray(first_bin_array, color_pack);
                         };
                 
-                    } else if(var_map.count("fbin")) {
+                    } else if(var_map.count("fbin") || var_map.count("sbin")) {
                         // З двійкового формату в...
-                        ArrayFromString(first_bin_array, var_map["fbin"].as<string>());
+                        if(var_map.count("fbin")) {
+                            ArrayFromString(first_bin_array, var_map["fbin"].as<string>());
+                        } else if(var_map.count("sbin")) {
+                            ArrayFromString(first_bin_array, var_map["sbin"].as<string>());
+                        };
 
                         if(var_map.count("dm")) {
                             DecimalFromBinary(dec_number, first_bin_array);
@@ -156,7 +160,7 @@ int main(int argc, char* argv[]) {
 
             if(var_map["arithmetic"].as<char>() == '+') {
                 result_bin_array = AdditionBinary(first_bin_array, second_bin_array);
-                OutputBinaryArray(result_bin_array, color_pack);
+
             }; 
             
             if(var_map["arithmetic"].as<char>() == '-') {
@@ -170,6 +174,27 @@ int main(int argc, char* argv[]) {
 
             if(var_map["arithmetic"].as<char>() == '/') {
                 //...
+            };
+
+            if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
+
+                if(var_map.count("dm")) {
+                    DecimalFromBinary(dec_number, result_bin_array);
+                    OutputDecimalNumber(dec_number, color_pack);
+                };
+
+                if(var_map.count("hm")) {
+                    DecimalFromBinary(dec_number, result_bin_array);
+                    HexadecimalFromDecimal(hex_array, dec_number);
+                    OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
+                };
+
+                if(var_map.count("bm")) {
+                    OutputBinaryArray(result_bin_array, color_pack);
+                };
+
+            } else {
+                OutputBinaryArray(result_bin_array, color_pack);
             };
         };
 
