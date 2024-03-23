@@ -43,7 +43,7 @@ void OutputDecimalNumber(int dec_number, string colors[]) {
     cout << colors[0] << "➤➤➤➤ Десятковий формат: " << colors[1];
     cout << dec_number << colors[2] << endl;
 };
-
+/*
 // Виведення застережень для команди help
 void OutputHelpTxt(string colors[]) {
     string line;
@@ -66,6 +66,7 @@ void OutputHelpTxt(string colors[]) {
 
     file.close(); // Закриття файлу
 };
+*/
 // Виведення інформації про програму
 void OutputVersionTxt(string colors[]) {
     string line;
