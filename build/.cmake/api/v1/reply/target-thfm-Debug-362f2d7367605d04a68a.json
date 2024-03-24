@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "progmi"
+			"path" : "thfm"
 		}
 	],
 	"backtrace" : 1,
@@ -74,7 +74,7 @@
 			]
 		}
 	],
-	"id" : "progmi::@6890427a1f51a3e7e1df",
+	"id" : "thfm::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -95,8 +95,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "progmi",
-	"nameOnDisk" : "progmi",
+	"name" : "thfm",
+	"nameOnDisk" : "thfm",
 	"paths" : 
 	{
 		"build" : ".",

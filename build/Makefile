@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named progmi
+# Target rules for targets named thfm
 
 # Build rule for target.
-progmi: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 progmi
-.PHONY : progmi
+thfm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thfm
+.PHONY : thfm
 
 # fast build rule for target.
-progmi/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/build
-.PHONY : progmi/fast
+thfm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/build
+.PHONY : thfm/fast
 
 src/binary_arithmetic/binary_arithmetic.o: src/binary_arithmetic/binary_arithmetic.cpp.o
 .PHONY : src/binary_arithmetic/binary_arithmetic.o
 
 # target to build an object file
 src/binary_arithmetic/binary_arithmetic.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/binary_arithmetic/binary_arithmetic.cpp.o
 .PHONY : src/binary_arithmetic/binary_arithmetic.cpp.o
 
 src/binary_arithmetic/binary_arithmetic.i: src/binary_arithmetic/binary_arithmetic.cpp.i
@@ -142,7 +142,7 @@ src/binary_arithmetic/binary_arithmetic.i: src/binary_arithmetic/binary_arithmet
 
 # target to preprocess a source file
 src/binary_arithmetic/binary_arithmetic.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/binary_arithmetic/binary_arithmetic.cpp.i
 .PHONY : src/binary_arithmetic/binary_arithmetic.cpp.i
 
 src/binary_arithmetic/binary_arithmetic.s: src/binary_arithmetic/binary_arithmetic.cpp.s
@@ -150,7 +150,7 @@ src/binary_arithmetic/binary_arithmetic.s: src/binary_arithmetic/binary_arithmet
 
 # target to generate assembly for a file
 src/binary_arithmetic/binary_arithmetic.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/binary_arithmetic/binary_arithmetic.cpp.s
 .PHONY : src/binary_arithmetic/binary_arithmetic.cpp.s
 
 src/convert/convert.o: src/convert/convert.cpp.o
@@ -158,7 +158,7 @@ src/convert/convert.o: src/convert/convert.cpp.o
 
 # target to build an object file
 src/convert/convert.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/convert/convert.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/convert/convert.cpp.o
 .PHONY : src/convert/convert.cpp.o
 
 src/convert/convert.i: src/convert/convert.cpp.i
@@ -166,7 +166,7 @@ src/convert/convert.i: src/convert/convert.cpp.i
 
 # target to preprocess a source file
 src/convert/convert.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/convert/convert.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/convert/convert.cpp.i
 .PHONY : src/convert/convert.cpp.i
 
 src/convert/convert.s: src/convert/convert.cpp.s
@@ -174,7 +174,7 @@ src/convert/convert.s: src/convert/convert.cpp.s
 
 # target to generate assembly for a file
 src/convert/convert.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/convert/convert.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/convert/convert.cpp.s
 .PHONY : src/convert/convert.cpp.s
 
 src/data/data.o: src/data/data.cpp.o
@@ -182,7 +182,7 @@ src/data/data.o: src/data/data.cpp.o
 
 # target to build an object file
 src/data/data.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/data/data.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/data/data.cpp.o
 .PHONY : src/data/data.cpp.o
 
 src/data/data.i: src/data/data.cpp.i
@@ -190,7 +190,7 @@ src/data/data.i: src/data/data.cpp.i
 
 # target to preprocess a source file
 src/data/data.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/data/data.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/data/data.cpp.i
 .PHONY : src/data/data.cpp.i
 
 src/data/data.s: src/data/data.cpp.s
@@ -198,7 +198,7 @@ src/data/data.s: src/data/data.cpp.s
 
 # target to generate assembly for a file
 src/data/data.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/data/data.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/data/data.cpp.s
 .PHONY : src/data/data.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -206,7 +206,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -214,7 +214,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -222,7 +222,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/output/output.o: src/output/output.cpp.o
@@ -230,7 +230,7 @@ src/output/output.o: src/output/output.cpp.o
 
 # target to build an object file
 src/output/output.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/output/output.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/output/output.cpp.o
 .PHONY : src/output/output.cpp.o
 
 src/output/output.i: src/output/output.cpp.i
@@ -238,7 +238,7 @@ src/output/output.i: src/output/output.cpp.i
 
 # target to preprocess a source file
 src/output/output.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/output/output.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/output/output.cpp.i
 .PHONY : src/output/output.cpp.i
 
 src/output/output.s: src/output/output.cpp.s
@@ -246,7 +246,7 @@ src/output/output.s: src/output/output.cpp.s
 
 # target to generate assembly for a file
 src/output/output.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/progmi.dir/build.make CMakeFiles/progmi.dir/src/output/output.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thfm.dir/build.make CMakeFiles/thfm.dir/src/output/output.cpp.s
 .PHONY : src/output/output.cpp.s
 
 # Help Target
@@ -257,7 +257,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... progmi"
+	@echo "... thfm"
 	@echo "... src/binary_arithmetic/binary_arithmetic.o"
 	@echo "... src/binary_arithmetic/binary_arithmetic.i"
 	@echo "... src/binary_arithmetic/binary_arithmetic.s"

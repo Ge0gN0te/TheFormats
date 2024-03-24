@@ -5,8 +5,8 @@ project(Laboratory_workN3.4-3.6, VERSION 0.2)
 find_package(Boost REQUIRED COMPONENTS program_options)
 
 # Додаємо виконуваний файл
-add_executable(progmi src/main.cpp)
-target_sources(progmi PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
+add_executable(thfm src/main.cpp)
+target_sources(thfm PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
 
-target_link_libraries(progmi PRIVATE Boost::program_options)
+target_link_libraries(thfm PRIVATE Boost::program_options)
 
