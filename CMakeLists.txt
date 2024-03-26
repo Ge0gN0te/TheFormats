@@ -9,4 +9,4 @@ add_executable(thfm src/main.cpp)
 target_sources(thfm PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
 
 target_link_libraries(thfm PRIVATE Boost::program_options)
-
+target_compile_options(thfm PUBLIC -g)
