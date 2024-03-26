@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
-project(Laboratory_workN3.4-3.6, VERSION 0.2)
+project(ThreeFormats, VERSION 0.3)
 
 # Знайдемо бібліотеку Boost
 find_package(Boost REQUIRED COMPONENTS program_options)
 
 # Додаємо виконуваний файл
-add_executable(thfm src/main.cpp)
-target_sources(thfm PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
+add_executable(3fm src/main.cpp)
+target_sources(3fm PRIVATE src/convert/convert.cpp src/output/output.cpp src/data/data.cpp src/binary_arithmetic/binary_arithmetic.cpp)
 
-target_link_libraries(thfm PRIVATE Boost::program_options)
-target_compile_options(thfm PUBLIC -g)
+target_link_libraries(3fm PRIVATE Boost::program_options)
+target_compile_options(3fm PUBLIC -g)
