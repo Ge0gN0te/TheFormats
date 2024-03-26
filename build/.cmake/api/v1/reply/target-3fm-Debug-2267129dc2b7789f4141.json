@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "thfm"
+			"path" : "3fm"
 		}
 	],
 	"backtrace" : 1,
@@ -85,7 +85,7 @@
 			]
 		}
 	],
-	"id" : "thfm::@6890427a1f51a3e7e1df",
+	"id" : "3fm::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -106,8 +106,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "thfm",
-	"nameOnDisk" : "thfm",
+	"name" : "3fm",
+	"nameOnDisk" : "3fm",
 	"paths" : 
 	{
 		"build" : ".",
