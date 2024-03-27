@@ -170,7 +170,7 @@ int main(int argc, char* argv[]) {
             };
 
             if(var_map["arithmetic"].as<char>() == '/') {
-                return 0;
+                //....
             };
 
             if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
