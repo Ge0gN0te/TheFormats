@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/3fm.dir/src/main.cpp.o CMakeFiles/3fm.dir/src/convert/convert.cpp.o CMakeFiles/3fm.dir/src/output/output.cpp.o CMakeFiles/3fm.dir/src/data/data.cpp.o CMakeFiles/3fm.dir/src/binary_arithmetic/binary_arithmetic.cpp.o -o 3fm  /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 

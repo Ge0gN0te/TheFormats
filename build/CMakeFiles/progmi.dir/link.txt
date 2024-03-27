@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/progmi.dir/src/main.cpp.o CMakeFiles/progmi.dir/src/convert/convert.cpp.o CMakeFiles/progmi.dir/src/output/output.cpp.o CMakeFiles/progmi.dir/src/data/data.cpp.o CMakeFiles/progmi.dir/src/binary_arithmetic/binary_arithmetic.cpp.o -o progmi  /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.74.0 
