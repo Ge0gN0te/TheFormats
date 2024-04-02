@@ -15,10 +15,10 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     // Описи всіх опцій
-    po::options_description all_desc ("Всі існуючі опції програми");
-    po::options_description func_desc ("Функції");
-    po::options_description arg_desc ("Аргументи");
-    po::options_description mark_desc ("Мітки");
+    po::options_description all_desc ("All options for program");
+    po::options_description func_desc ("Functions");
+    po::options_description arg_desc ("Arguments");
+    po::options_description mark_desc ("Marks");
     // Змінна для парсингу введених користувачем значень
     po::variables_map var_map;
 
@@ -34,21 +34,21 @@ int main(int argc, char* argv[]) {
 
     // Додавання опцій та описів до них
     func_desc.add_options()
-        ("help", "Вивід всіх існуючих опцій")
-        ("version", "Вивід інформації про програму")
-        ("convert", "Конвертування числа")
-        ("arithmetic", po::value<char>(), "Двійкова арифметика")
+        ("help", "Output all options")
+        ("version", "Output to about program")
+        ("convert", "Covert to formats")
+        ("arithmetic", po::value<char>(), "Binary arithmetic")
         ;
     arg_desc.add_options()
-        ("fbin", po::value<string>(), "Перший двійковий формат")
-        ("sbin", po::value<string>(), "Другий двійковий формат")
-        ("dec", po::value<int>(&dec_number), "Десятковий формат")
-        ("hex", po::value<string>(), "Шістнадцятковий формат")
+        ("fbin", po::value<string>(), "First binary format")
+        ("sbin", po::value<string>(), "Second binary format")
+        ("dec", po::value<int>(&dec_number), "Decimal format")
+        ("hex", po::value<string>(), "Hexadecimal format")
         ;
     mark_desc.add_options()
-        ("bm", "Мітка двійкового формату")
-        ("dm", "Мітка десяткового формату")
-        ("hm", "Мітка шістнадцяткового формату")
+        ("bm", "Binary format mark")
+        ("dm", "Decimal format mark")
+        ("hm", "Hexadecimal format mark")
         ;
     // Групування всіх описів в один 
     all_desc.add(func_desc).add(arg_desc).add(mark_desc);
@@ -61,13 +61,13 @@ int main(int argc, char* argv[]) {
         po::notify(var_map);
 
     } catch(const po::unknown_option& e) {
-        cerr << CO::RED << "Помилка: " << "Невідома опція! " << e.what() << CO::STAND << endl;
+        cerr << CO::RED << "Error: " << "Invalid option! " << e.what() << CO::STAND << endl;
         return 0;
     } catch(const po::invalid_option_value& e) {
-        cerr << CO::RED << "Помилка: " << "Значення не відповідає формату! " << e.what() << CO::STAND << endl;
+        cerr << CO::RED << "Error: " << "Value dose't have format " << e.what() << CO::STAND << endl;
         return 0;
     } catch(const po::invalid_command_line_syntax& e) {
-        cerr << CO::RED << "Помилка: " << "Аргумент не заповнений! " << e.what() << CO::STAND << endl;
+        cerr << CO::RED << "Error: " << "None value for format! " << e.what() << CO::STAND << endl;
         return 0;
     };
 
@@ -148,11 +148,11 @@ int main(int argc, char* argv[]) {
                     };
 
                 } else {
-                    throw string("Відсутні мітки для конвертування!");
+                    throw string("None marks for convert!");
                 };
 
             } else {
-                throw string("Відсутній формат числа для конвертування!");
+                throw string("None formats for convert!");
             };
         } else if(var_map.count("arithmetic")) {
             ArrayFromString(first_bin, var_map["fbin"].as<string>());
@@ -196,11 +196,11 @@ int main(int argc, char* argv[]) {
         };
 
         if(argc < 2) {
-            throw string("Відсутні опції!");
+            throw string("None options!");
         };
 
     } catch(const string e) {
-        cerr << CO::RED << "Помилка: " << e << CO::STAND << endl;
+        cerr << CO::RED << "Error: " << e << CO::STAND << endl;
     };
 
 
