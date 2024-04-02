@@ -1,5 +1,4 @@
-ПРОГРАМА: ThreeFormats; ВЕРСІЇ: 0.3;
-◆ Програма була підготовлена для Лабораторних робіт N3.4-3.7 Комп'ютерної схемотехніки;
-◆ Програма для виконання функцій конвертування та виконання двійкових арифметичних операцій 
-  над числами трьох форматів(двійкового, десяткового та шістнадцяткового) числення;
-◆ Автор програми: Диченко Давид Олександрович(GitHub: Ge0gN0te);
+◆ THREE FORMATS 0.3;
+◆ The program performs conversion functions and arithmetic operations 
+┗ on ONLY binary numbers for three formats (binary, decimal, hexadecimal);
+◆ The author of the program: Ge0gN0te (for tasks: 4 in the list of 315 KI groups);
