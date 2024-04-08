@@ -159,14 +159,14 @@ int main(int argc, char* argv[]) {
             ArrayFromString(second_bin, var_map["sbin"].as<string>());
 
             if(var_map["arithmetic"].as<char>() == '+') {
-                result_bin = AdditionBinary(first_bin, second_bin);
+                result_bin = BinaryAddition(first_bin, second_bin);
             }; 
             
             if(var_map["arithmetic"].as<char>() == '-') {
-                result_bin = SubtractionBinary(first_bin, second_bin);
+                result_bin = BinarySubtraction(first_bin, second_bin);
             };
             if(var_map["arithmetic"].as<char>() == 'x') {
-                result_bin = MultiplycationBinary(first_bin, second_bin);
+                result_bin = BinaryMultiplication(first_bin, second_bin);
             };
 
             if(var_map["arithmetic"].as<char>() == '/') {

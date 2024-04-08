@@ -4,11 +4,9 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 // Знаходження суми двох бінарних масивів
-vector<int> AdditionBinary(vector<int> first_bin, vector<int> second_bin);
-vector<int> SubtractionBinary(vector<int> first_bin, vector<int> second_bin);
-vector<int> MultiplycationBinary(vector<int> first_bin, vector<int> second_bin);
+std::vector<int> BinaryAddition(std::vector<int> first_bin, std::vector<int> second_bin);
+std::vector<int> BinarySubtraction(std::vector<int> first_bin, std::vector<int> second_bin);
+std::vector<int> BinaryMultiplication(std::vector<int> first_bin, std::vector<int> second_bin);
 
 #endif 

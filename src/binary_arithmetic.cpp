@@ -1,5 +1,5 @@
 #include "../include/binary_arithmetic.hpp"
-
+using namespace std;
 
 int HowArraysMaxSize(vector<int> first_array, vector<int> second_array) {
 	int max_size;
@@ -16,7 +16,7 @@ int HowArraysMaxSize(vector<int> first_array, vector<int> second_array) {
 };
 
 // Знаходження суми двох бінарних масивів
-vector<int> AdditionBinary(vector<int> first_bin, vector<int> second_bin) {
+vector<int> BinaryAddition(vector<int> first_bin, vector<int> second_bin) {
     int sum = 0;
     int carry = 0;
     int max_size;
@@ -37,7 +37,7 @@ vector<int> AdditionBinary(vector<int> first_bin, vector<int> second_bin) {
     return result_bin;
 };
 
-vector<int> SubtractionBinary(vector<int> first_bin, vector<int> second_bin) {
+vector<int> BinarySubtraction(vector<int> first_bin, vector<int> second_bin) {
     int diff = 0;
     int borrow = 0;
     int max_size;
@@ -61,14 +61,14 @@ vector<int> SubtractionBinary(vector<int> first_bin, vector<int> second_bin) {
     return result_bin;
 };
 
-vector<int> MultiplycationBinary(vector<int> first_bin, vector<int> second_bin) {
+vector<int> BinaryMultiplication(vector<int> first_bin, vector<int> second_bin) {
     vector<int> temp_bin = first_bin;
     vector<int> result_bin = {0}; // Початковий результат - 0
 
     for (int i = 0; i < second_bin.size(); i++) {
         if (second_bin[i] == 1) {
             // Додавання temp_bin до result_bin, емулюючи множення числа на само себе
-            result_bin = AdditionBinary(result_bin, temp_bin);
+            result_bin = BinaryAddition(result_bin, temp_bin);
         };
         // Перемноження temp_bin на 10 (додавання нуля зліва)
         temp_bin.insert(temp_bin.begin(), 0);
