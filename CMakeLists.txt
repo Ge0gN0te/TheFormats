@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(ThreeFormats, VERSION 0.3)
 
+set(CMAKE_CXX_COMPILER "g++")
+
 # Знайдемо бібліотеку Boost
 find_package(Boost REQUIRED COMPONENTS program_options)
 
