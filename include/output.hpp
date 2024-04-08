@@ -5,13 +5,11 @@
 #include <fstream>
 #include <vector>
 
-using namespace std;
+void OutputBinaryArray(std::vector<int>& bin_array, std::string colors[]);
+void OutputHexadecimalArray(std::vector<int>& hex_array, const char hex_map[], std::string colors[]);
+void OutputDecimalNumber(int dec_number, std::string colors[]);
 
-void OutputBinaryArray(vector<int>& bin_array, string colors[]);
-void OutputHexadecimalArray(vector<int>& hex_array, const char hex_map[], string colors[]);
-void OutputDecimalNumber(int dec_number, string colors[]);
-
-//void OutputHelpTxt(string colors[]);
-void OutputVersionTxt(string colors[]);
+//void OutputHelpTxt(std::string colors[]);
+void OutputVersionTxt(std::string colors[]);
 
 #endif 

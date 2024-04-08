@@ -1,4 +1,5 @@
 #include "../include/output.hpp"
+using namespace std;
 
 // Виведення двійкового формату
 void OutputBinaryArray(vector<int>& bin_array, string colors[]) {

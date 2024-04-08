@@ -1,4 +1,5 @@
 #include "../include/convert.hpp"
+using namespace std;
 
 // Перетворення десяткового формату у двійковий 
 void BinaryFromDecimal(vector<int>& bin_array, int dec_number) {

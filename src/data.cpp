@@ -1,4 +1,5 @@
 #include "../include/data.hpp"
+using namespace std;
 
 // Обернений переклад шістнадцяткового формату
 void TransformCharArray(vector<int>& int_array, string value) {

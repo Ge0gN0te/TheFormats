@@ -4,13 +4,11 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 struct Maps {
     static constexpr char hex_letters[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 };
 
-void TransformCharArray(vector<int>& int_array, string value);
-void ArrayFromString(vector<int>& array, string value);
+void TransformCharArray(std::vector<int>& int_array, std::string value);
+void ArrayFromString(std::vector<int>& array, std::string value);
 
 #endif 
