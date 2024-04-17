@@ -7,7 +7,6 @@
 #include "../include/binary_arithmetic.hpp"
 #include "../include/output.hpp"
 #include "../include/data.hpp"
-#include "../include/colors.hpp"
 
 namespace po = boost::program_options;
 using namespace std;
@@ -28,9 +27,6 @@ int main(int argc, char* argv[]) {
     vector<int> second_bin;
     vector<int> hex_array;
     vector<int> result_bin;
-
-    // Кольорова палітра для функцій
-    string color_pack[] = {CO::YELLOW, CO::GREEN, CO::RED, CO::STAND, CO::BLUE};
 
     // Додавання опцій та описів до них
     func_desc.add_options()
@@ -61,13 +57,16 @@ int main(int argc, char* argv[]) {
         po::notify(var_map);
 
     } catch(const po::unknown_option& e) {
-        cerr << CO::RED << "Error: " << "Invalid option! " << e.what() << CO::STAND << endl;
+        cerr << CL::RD << "Error: " << "Invalid option! " << e.what() << CL::ST << endl;
         return 0;
     } catch(const po::invalid_option_value& e) {
-        cerr << CO::RED << "Error: " << "Value dose't have format " << e.what() << CO::STAND << endl;
+        cerr << CL::RD << "Error: " << "Value dose't have format " << e.what() << CL::ST << endl;
         return 0;
     } catch(const po::invalid_command_line_syntax& e) {
-        cerr << CO::RED << "Error: " << "None value for format! " << e.what() << CO::STAND << endl;
+        cerr << CL::RD << "Error: " << "None value for format! " << e.what() << CL::ST << endl;
+        return 0;
+    } catch(const boost::wrapexcept<po::ambiguous_option>& e) {
+        cerr << CL::RD << "Error: " << "None value for format! " << e.what() << CL::ST << endl;
         return 0;
     };
 
@@ -75,11 +74,10 @@ int main(int argc, char* argv[]) {
     try {
         if(var_map.count("help")) {
             cout << all_desc << endl;
-            //OutputHelpTxt(color_pack);
         }
 
         else if(var_map.count("version")) {
-            OutputVersionTxt(color_pack);
+            OutputVersionTxt();
         };
 
         if(var_map.count("convert")) {
@@ -91,17 +89,17 @@ int main(int argc, char* argv[]) {
                     if(var_map.count("dec")) {
 
                         if(var_map.count("dm")) {
-                            OutputDecimalNumber(dec_number, color_pack);
+                            OutputDecimalNumber(dec_number);
                         };
 
                         if(var_map.count("hm")) {
                             HexadecimalFromDecimal(hex_array, dec_number);
-                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters);
                         };
 
                         if(var_map.count("bm")) {
                             BinaryFromDecimal(first_bin, dec_number);
-                            OutputBinaryArray(first_bin, color_pack);
+                            OutputBinaryArray(first_bin);
                         };
                 
                     } else if(var_map.count("fbin") || var_map.count("sbin")) {
@@ -114,17 +112,17 @@ int main(int argc, char* argv[]) {
 
                         if(var_map.count("dm")) {
                             DecimalFromBinary(dec_number, first_bin);
-                            OutputDecimalNumber(dec_number, color_pack);
+                            OutputDecimalNumber(dec_number);
                         };
 
                         if(var_map.count("hm")) {
                             DecimalFromBinary(dec_number, first_bin);
                             HexadecimalFromDecimal(hex_array, dec_number);
-                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters);
                         };
 
                         if(var_map.count("bm")) {
-                            OutputBinaryArray(first_bin, color_pack);
+                            OutputBinaryArray(first_bin);
                         };
 
                     } else if(var_map.count("hex")) {
@@ -133,17 +131,17 @@ int main(int argc, char* argv[]) {
 
                         if(var_map.count("dm")) {
                             DecimalFromHexadecimal(dec_number, hex_array);
-                            OutputDecimalNumber(dec_number, color_pack);
+                            OutputDecimalNumber(dec_number);
                         };
 
                         if(var_map.count("hm")) {
-                            OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
+                            OutputHexadecimalArray(hex_array, Maps::hex_letters);
                         };
 
                         if(var_map.count("bm")) {
                             DecimalFromHexadecimal(dec_number, hex_array);
                             BinaryFromDecimal(first_bin, dec_number);
-                            OutputBinaryArray(first_bin, color_pack);
+                            OutputBinaryArray(first_bin);
                         };
                     };
 
@@ -177,21 +175,21 @@ int main(int argc, char* argv[]) {
 
                 if(var_map.count("dm")) {
                     DecimalFromBinary(dec_number, result_bin);
-                    OutputDecimalNumber(dec_number, color_pack);
+                    OutputDecimalNumber(dec_number);
                 };
 
                 if(var_map.count("hm")) {
                     DecimalFromBinary(dec_number, result_bin);
                     HexadecimalFromDecimal(hex_array, dec_number);
-                    OutputHexadecimalArray(hex_array, Maps::hex_letters, color_pack);
+                    OutputHexadecimalArray(hex_array, Maps::hex_letters);
                 };
 
                 if(var_map.count("bm")) {
-                    OutputBinaryArray(result_bin, color_pack);
+                    OutputBinaryArray(result_bin);
                 };
 
             } else {
-                OutputBinaryArray(result_bin, color_pack);
+                OutputBinaryArray(result_bin);
             };
         };
 
@@ -200,7 +198,7 @@ int main(int argc, char* argv[]) {
         };
 
     } catch(const string e) {
-        cerr << CO::RED << "Error: " << e << CO::STAND << endl;
+        cerr << CL::RD << "Error: " << e << CL::ST << endl;
     };
 
 

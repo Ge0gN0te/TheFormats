@@ -2,11 +2,11 @@
 using namespace std;
 
 // Виведення двійкового формату
-void OutputBinaryArray(vector<int>& bin_array, string colors[]) {
+void OutputBinaryArray(vector<int>& bin_array) {
     int counter = 0;
     int s_counter = 0;
 
-    cout << colors[0] << "➤➤➤➤ Binary format: " << colors[1];
+    cout << CL::YW << "➤➤➤➤ Binary format: " << CL::GN;
     for(int i = bin_array.size() - 1; i >= 0; i--) {
         if(counter == 4) {
             cout << ' ';
@@ -16,14 +16,14 @@ void OutputBinaryArray(vector<int>& bin_array, string colors[]) {
         counter++;
         s_counter++;
     };
-    cout << colors[2] << " (" << s_counter << ")" << colors[3] << endl;
+    cout << CL::RD << " (" << s_counter << ")" << CL::ST << endl;
 };
 // Виведення шістнадцяткового формату
-void OutputHexadecimalArray(vector<int>& hex_array, const char hex_map[], string colors[]) {
+void OutputHexadecimalArray(vector<int>& hex_array, const char hex_map[]) {
     int counter = 0;
     int s_counter = 0;
 
-    cout << colors[0] << "➤➤➤➤ Hexadecimal format: " << colors[1];
+    cout << CL::YW << "➤➤➤➤ Hexadecimal format: " << CL::GN;
     for(int i = hex_array.size() - 1; i >= 0; i--) {
         if(counter == 2) {
             cout << ' ';
@@ -37,15 +37,15 @@ void OutputHexadecimalArray(vector<int>& hex_array, const char hex_map[], string
         counter++;
         s_counter++;
     };
-    cout << colors[2] << " (" << s_counter << ")" << colors[3] << endl;
+    cout << CL::RD << " (" << s_counter << ")" << CL::ST << endl;
 };
 // Виведення десяткового формату
-void OutputDecimalNumber(int dec_number, string colors[]) {
-    cout << colors[0] << "➤➤➤➤ Decimal format: " << colors[1];
-    cout << dec_number << colors[2] << endl;
+void OutputDecimalNumber(int dec_number) {
+    cout << CL::YW << "➤➤➤➤ Decimal format: " << CL::GN;
+    cout << dec_number << CL::ST << endl;
 };
 // Виведення інформації про програму
-void OutputVersionTxt(string colors[]) {
+void OutputVersionTxt() {
     string line;
     int counter = 0;
     ifstream file("../data/version_info.txt"); // Відкриття файлу для зчитування
@@ -55,14 +55,16 @@ void OutputVersionTxt(string colors[]) {
     };
     
     while (getline(file, line)) { // Зчитування рядків з файлу
-        if(counter < 0 || counter > 3) {
-            cout << colors[4] << line << endl;
+        if(counter < 4) {
+            cout << CL::BE << line << endl;
+        } else if(counter < 8) {
+            cout << CL::YW << line << endl;
         } else {
-            cout << colors[1] << line << endl;
+            cout << CL::GN << line << endl;
         }
         counter++;
     };
-    cout << colors[3];
+    cout << CL::ST;
 
     file.close(); // Закриття файлу
 };
