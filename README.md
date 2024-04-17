@@ -1,3 +1,5 @@
+![Img](img/face.jpg)
+
 # THREE FORMATS 0.3
 # Три формати 0.3
 
