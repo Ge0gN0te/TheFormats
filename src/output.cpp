@@ -44,49 +44,25 @@ void OutputDecimalNumber(int dec_number, string colors[]) {
     cout << colors[0] << "➤➤➤➤ Decimal format: " << colors[1];
     cout << dec_number << colors[2] << endl;
 };
-/*
-// Виведення застережень для команди help
-void OutputHelpTxt(string colors[]) {
+// Виведення інформації про програму
+void OutputVersionTxt(string colors[]) {
     string line;
     int counter = 0;
-    ifstream file("../components/help_info.txt"); // Відкриття файлу для зчитування
+    ifstream file("../data/version_info.txt"); // Відкриття файлу для зчитування
 
     if (!file.is_open()) { // Перевірка, чи вдалося відкрити файл
-        throw string("Не вдалося відкрити файл!");
+        throw string("Can't find file!");
     };
-
+    
     while (getline(file, line)) { // Зчитування рядків з файлу
-        if(counter > 12) {
-            cout << colors[1] << line << endl;
+        if(counter < 0 || counter > 3) {
+            cout << colors[4] << line << endl;
         } else {
-            cout << colors[2] << line << endl; // Виведення рядка на екран
-        };
+            cout << colors[1] << line << endl;
+        }
         counter++;
     };
     cout << colors[3];
 
     file.close(); // Закриття файлу
 };
-*/
-// Виведення інформації про програму
-void OutputVersionTxt(string colors[]) {
-    string line;
-    int counter = 0;
-    ifstream file("../info/version_info.txt"); // Відкриття файлу для зчитування
-
-    if (!file.is_open()) { // Перевірка, чи вдалося відкрити файл
-        throw string("Can't find file!");
-    };
-
-    while (getline(file, line)) { // Зчитування рядків з файлу
-        if(counter > 0) {
-            cout << colors[4] << line << endl;
-        } else {
-            cout << colors[1] << line << endl; // Виведення рядка на екран
-        };
-        counter++;
-    };
-    cout << colors[3];
-
-    file.close(); // Закриття файлу
-}

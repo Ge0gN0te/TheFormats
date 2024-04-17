@@ -15,6 +15,16 @@ int HowArraysMaxSize(vector<int> first_array, vector<int> second_array) {
 	return max_size;
 };
 
+vector<int> ReverseArray(vector<int> array) {
+	vector<int> new_array;
+
+	for(int i = array.size() - 1; i >= 0; i--) {
+		new_array.push_back(array[i]);
+	};
+
+	return new_array;
+};
+
 // Знаходження суми двох бінарних масивів
 vector<int> BinaryAddition(vector<int> first_bin, vector<int> second_bin) {
     int sum = 0;
@@ -76,3 +86,52 @@ vector<int> BinaryMultiplication(vector<int> first_bin, vector<int> second_bin) 
 
     return result_bin;
 };
+
+vector<int> BinaryDivision(vector<int> first_bin, vector<int> second_bin) {
+    vector<int> one = {1};
+    vector<int> quotient = {0};
+    vector<int> remainder = first_bin;
+    vector<int> divisor = second_bin;
+	vector<int> sub_result;
+
+	sub_result = BinarySubtraction(remainder, divisor);
+	sub_result = ReverseArray(sub_result);
+
+    while (sub_result[0] != 1) {
+        remainder = BinarySubtraction(remainder, divisor);
+        quotient = BinaryAddition(quotient, one);
+		sub_result = BinarySubtraction(remainder, divisor);
+    };
+    
+    return quotient;
+};
+
+vector<int> BinaryModulus(vector<int> first_bin, vector<int> second_bin) {
+    vector<int> quotient = BinaryDivision(first_bin, second_bin);
+    vector<int> product = BinaryMultiplication(second_bin, quotient);
+    vector<int> modulus = BinarySubtraction(first_bin, product);
+
+    return modulus;
+};
+/*
+BinaryNumber performDivision(BinaryNumber num1, BinaryNumber num2) {
+    BinaryNumber quotient = {0};
+    BinaryNumber remainder = num1;
+    BinaryNumber divisor = num2;
+    BinaryNumber one = binaryFromDecimal(1);
+
+    while (performSubtraction(remainder, divisor).binary[0] != 1) {
+        remainder = performSubtraction(remainder, divisor);
+        quotient = performAddition(quotient, one);
+    }
+    
+    return quotient;
+}
+
+BinaryNumber performModulus(BinaryNumber num1, BinaryNumber num2) {
+    BinaryNumber quotient = performDivision(num1, num2);
+    BinaryNumber product = performMultiplication(num2, quotient);
+    BinaryNumber modulus = performSubtraction(num1, product);
+    return modulus;
+}
+*/

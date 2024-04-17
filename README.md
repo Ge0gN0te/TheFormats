@@ -1,5 +1,8 @@
 # THREE FORMATS 0.3
+# Три формати 0.3
 
-The program performs conversion functions and arithmetic operations on ONLY binary numbers for three formats (binary, decimal, hexadecimal);
+## Про програму
+Програма створена за вимогами ```Лабораторних робіт(3.4, 3.5, 3.6, 3.7)``` предмету ```Комп'ютерна електроніка```
 
-The author of the program: Ge0gN0te(`davyd.dychenko@kitu.nau.edu.ua`) (for tasks: 4 in the list of 315 KI groups);
+## Автор
+Програма підготовлена студентом 315-КІ групи ```Диченком Давидом Олександровичем``` (```Ge0gN0te```)
