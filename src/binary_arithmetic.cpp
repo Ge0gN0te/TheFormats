@@ -1,12 +1,24 @@
 #include "../include/binary_arithmetic.hpp"
 using namespace std;
 
+
 int HowArraysMaxSize(vector<int> first_array, vector<int> second_array) {
+    /*  Визначення найбільшого вектора за розміром
+        Ввід:
+        * first_array - перший числовий вектор;
+        * second_array - другий числовий вектор;
+        Вививід:
+        * max - найбільший розмір;  */
     return max(first_array.size(), second_array.size());
 };
 
-// Знаходження суми двох бінарних масивів
 vector<int> BinaryAddition(vector<int> first_bin, vector<int> second_bin) {
+    /*  Знаходження суми двох двійкових векторів
+        Ввід:
+        * first_array - перший числовий вектор;
+        * second_array - другий числовий вектор;
+        Вививід:
+        * result_bin - сума двох ввідних векторів;  */
     int sum = 0;
     int carry = 0;
     int max_size;
@@ -28,6 +40,12 @@ vector<int> BinaryAddition(vector<int> first_bin, vector<int> second_bin) {
 };
 
 vector<int> BinarySubtraction(vector<int> first_bin, vector<int> second_bin) {
+    /*  Знаходження різниці двох двійкових векторів
+        Ввід:
+        * first_array - перший числовий вектор;
+        * second_array - другий числовий вектор;
+        Вививід:
+        * result_bin - різниця двох ввідних векторів;  */
     int diff = 0;
     int borrow = 0;
     int max_size;
@@ -52,6 +70,12 @@ vector<int> BinarySubtraction(vector<int> first_bin, vector<int> second_bin) {
 };
 
 vector<int> BinaryMultiplication(vector<int> first_bin, vector<int> second_bin) {
+    /*  Знаходження добутку двох двійкових векторів
+        Ввід:
+        * first_array - перший числовий вектор;
+        * second_array - другий числовий вектор;
+        Вививід:
+        * result_bin - добуток двох ввідних векторів;  */
     vector<int> temp_bin = first_bin;
     vector<int> result_bin = {0}; // Початковий результат - 0
 
