@@ -167,10 +167,6 @@ int main(int argc, char* argv[]) {
                 result_bin = BinaryMultiplication(first_bin, second_bin);
             };
 
-            if(var_map["arithmetic"].as<char>() == '/') {
-				result_bin = BinaryModulus(first_bin, second_bin);
-            };
-
             if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {
 
                 if(var_map.count("dm")) {
