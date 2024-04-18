@@ -1,10 +1,10 @@
 ![Img](img/face.jpg)
 
 
-[](doc/about.md)
+[Про програму](doc/about.md)
 
-[](doc/requirements.md)
+[Вимоги](doc/requirements.md)
 
-[](doc/download.md)
+[Завантаження](doc/download.md)
 
-[](doc/author.md)
+[Автор](doc/author.md)
