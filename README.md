@@ -1,10 +1,10 @@
 ![Img](img/face.jpg)
 
 
-(doc/about.md)
+[](doc/about.md)
 
-(doc/requirements.md)
+[](doc/requirements.md)
 
-(doc/download.md)
+[](doc/download.md)
 
-(doc/author.md)
+[](doc/author.md)
