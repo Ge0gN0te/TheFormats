@@ -204,7 +204,10 @@ int main(int argc, char* argv[]) {
                 result_bin = BinaryMultiplication(first_bin, second_bin);
             };
 
-            // Ділення - відсутнє!!!
+            // Ділення 
+            if(var_map["arithmetic"].as<char>() == '/') {
+                result_bin = BinaryDivision(first_bin, second_bin);
+            };
 
             // Перевірка марок
             if(var_map.count("bm") || var_map.count("dm") || var_map.count("hm")) {

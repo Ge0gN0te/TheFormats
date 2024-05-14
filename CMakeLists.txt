@@ -1,4 +1,4 @@
-#
+# Реєстрування версії CMake
 cmake_minimum_required(VERSION 3.0)
 # Назва та версія проєкту
 project(ThreeFormats, VERSION 0.3)
